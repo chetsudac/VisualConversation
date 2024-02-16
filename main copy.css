@@ -1,76 +1,98 @@
 html{
     margin: 0;
+    width: 100vw;
+    height: 100vh;
     font-size: 10px;
-    font-family: 'Courier New', Courier, monospace;
     box-sizing: border-box;
-
-}
+    font-family: "dovetail-mvb", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: black;
+    animation-name: bgColor-changed;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1200ms;
+          
+      }
+      
+      @keyframes bgColor-changed {
+        0% {background-color: darkgoldenrod}
+        50% {background-color: white}
+        100% {background-color: navy}
+      }
 
 body {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin: 0;
     padding: 5rem;
+    color: darkgoldenrod;
 }
 
 main {
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    z-index: 2;
-    position: relative;
-}
-
-.bubble-container--left {
-    display: flex;
-    gap: .5rem;
-    flex-direction: column;
-}
-
-.bubble-container--right {
-    display: flex;
-    gap: .5rem;
-    flex-direction: column;
-    align-items: end;
-}
-
-.bubble--blue, .bubble--pink {
-    color: white;
-    padding: 1rem;
-    width: 75%;
-    font-size: 2rem;
-}
-
-.bubble--blue {
-    background-color: royalblue;
-    border-radius: 2rem 2rem 2rem 0;
-    transition: background-color 300ms;
-}
-
-.bubble--blue:hover{
-    background-color: plum;
-}
-
-.bubble--pink {
-    background-color: plum;
-    border-radius: 2rem 2rem 0 2rem;
-    text-align: right;
-    transition: background-color 300ms;
-}
-
-.bubble--pink:hover{
-    background-color: royalblue;
-}
-
-.bubble--name {
-    font-size: 1.4rem;
-    text-transform: uppercase;
-}
-
-.background {
-    position: fixed;
-    top: 0;
-    left: 0;
+    flex-wrap: wrap;
     width: 100vw;
-    height: 100vh;
-    object-fit: cover;
 }
+
+.text-container {
+  background-color: transparent;
+  width: 320px;
+  height: 200px;
+  text-align: center;
+  padding: 3rem;
+  margin: .5rem;
+}
+
+.text-character {
+    text-align: left;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.text-container-yellow {
+    color: darkgoldenrod;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 3.5rem 3.5rem 0 3.5rem;
+    animation-duration: 700ms;
+}
+
+.text-container-blue {
+    color: royalblue;
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 3.5rem 3.5rem 3.5rem 0;
+    animation-duration: 700ms;
+}
+
+.text-container-blue:hover{
+    color: white;
+    animation-name: bgColor-changed--blue;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+          
+      }
+      
+      @keyframes bgColor-changed--blue {
+        0% {background-color: royalblue}
+        25% {background-color: #170063}
+        50% {background-color: royalblue}
+        75% {background-color: #170063}
+        100% {background-color: royalblue}
+      }
+
+.text-container-yellow:hover{
+        color: white;
+        animation-name: bgColor-changed--yellow;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+              
+          }
+          
+          @keyframes bgColor-changed--yellow {
+            0% {background-color: #E8AE47}
+            25% {background-color: #c78c06}
+            50% {background-color: #E8AE47}
+            75% {background-color: #c78c06}
+            100% {background-color: #E8AE47}
+          }
